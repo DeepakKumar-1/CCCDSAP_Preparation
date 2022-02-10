@@ -55,10 +55,9 @@ public class MergeSort {
         int n = sc.nextInt();
         // Create an Array of size n
         int []arr = new int[n];
-        for(int i=0; i<arr.length; i++){
+        for(int i=0; i<arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        // Array Before Sorting
         System.out.print("Array Before Sorting is: " + Arrays.toString(arr));
         mergeSort(arr, 0, arr.length-1);
         // Array After Sorting
