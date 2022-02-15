@@ -23,12 +23,12 @@ public class LongestCommonSubsequenceMemoization {
             return storage[m][n];
         }
         if(s.charAt(0) == t.charAt(0)){
-            storage[m][n] = 1 + LCS(s.substring(1), t.substring(1));
+            storage[m][n] = 1 + LCS(s.substring(1), t.substring(1), storage);
             return storage[m][n];
         } else{
-            int op1 = LCS(s, t.substring(1));
-            int op2 = LCS(s.substring(1), t);
-            int op3 = LCS(s.substring(1), t.substring(1));
+            int op1 = LCS(s, t.substring(1), storage);
+            int op2 = LCS(s.substring(1), t, storage);
+            int op3 = LCS(s.substring(1), t.substring(1), storage); // Its Redundant
             storage[m][n] = Math.max(op1, Math.max(op2, op3));
             return storage[m][n];
         }
