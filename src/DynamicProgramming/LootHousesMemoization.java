@@ -11,7 +11,7 @@ public class LootHousesMemoization {
     }
 
     private static int lootHouses(int []houses, int n, int []storage){
-        if(storage[n] != -1){
+        if(n >= 0 && storage[n] != -1){
             return storage[n];
         }
         if(n < 0){
