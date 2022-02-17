@@ -1,4 +1,4 @@
-package ModuloArithmetic;
+package FastModuloMutiplication;
 import java.util.Scanner;
 public class FastExponentiationIMP {
     static final int MOD = 1000000007;

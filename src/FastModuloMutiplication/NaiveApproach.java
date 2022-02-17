@@ -1,4 +1,4 @@
-package ModuloArithmetic;
+package FastModuloMutiplication;
 
 import java.util.Scanner;
 
