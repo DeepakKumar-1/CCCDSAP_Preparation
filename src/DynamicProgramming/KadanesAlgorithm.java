@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class KadanesAlgorithm {
     public static int kadanesAlgo(int []arr){
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;   // It Will Handle Negative Values
         int currSum = 0;
         for(int i=0; i<arr.length; i++){
             currSum += arr[i];
