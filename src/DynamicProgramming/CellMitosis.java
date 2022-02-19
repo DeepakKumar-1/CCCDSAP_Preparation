@@ -4,7 +4,7 @@
 //import java.util.Scanner;
 //
 //public class CellMitosis {
-//    private static int cellMitosis(int c, int n, int x, int y, int z, int cost){
+//    private static int cellMitosis(int c, int n, int x, int y, int cost){
 //        if(c >= n){
 //            return cost;
 //        }
@@ -12,15 +12,13 @@
 //            return Integer.MAX_VALUE;
 //        }
 //        // Double it
-//        int op1 = cellMitosis(c*2, n, x, y, z, cost+x);
+//        int op1 = cellMitosis(c*2, n, x, y, cost+x);
 //        // Increase by one
-//        int op2 = cellMitosis(c+1, n, x, y, z, cost+y);
-//        // Decrease by one
-////        int op3 = cellMitosis(c-1, n, x, y, z, cost+z);
+//        int op2 = cellMitosis(c+1, n, x, y, cost+y);
 //        return Math.min(op1, op2);
 //    }
-//    public static int cellMitosis(int n ,int x, int y, int z){
-//        return cellMitosis(1, n, x, y, z, 0);
+//    public static int cellMitosis(int n ,int x, int y){
+//        return cellMitosis(1, n, x, y, 0);
 //    }
 //    public static void main(String []args){
 //        Scanner sc = new Scanner(System.in);
@@ -29,8 +27,7 @@
 //            int n = sc.nextInt();
 //            int x = sc.nextInt();
 //            int y = sc.nextInt();
-//            int z = sc.nextInt();
-//            int ans = cellMitosis(n, x, y, z);
+//            int ans = cellMitosis(n, x, y);
 //            System.out.println(ans);
 //        }
 //    }
