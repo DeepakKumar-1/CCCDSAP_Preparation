@@ -1,7 +1,6 @@
 package DynamicProgramming;
 
-import java.util.Scanner;
-
+import java.util.*;
 public class ChefAndString {
     public static int chefAndString(String s){
         char []arr = s.toCharArray();
