@@ -1,4 +1,4 @@
-package Arrays;
+package MockTestSolutions.MockTest4;
 
 /* package codechef; // don't place package name! */
 
