@@ -1,11 +1,9 @@
 package AdvancedRecursion;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
-public class PhoneKeypadProblem {
+public class PhoneKeypad {
     public static String getString(int d){
         return switch (d) {
             case 2 -> "abc";
@@ -19,30 +17,29 @@ public class PhoneKeypadProblem {
             default -> "";
         };
     }
-    public static ArrayList<String> keyPad(String digit, String p, ArrayList<String> list, int index){
-        if(digit.isEmpty()){
+    public static ArrayList<String> keypad(String digits, String ans, int index, ArrayList<String> list){
+        // Base Case
+        if(index >= digits.length()){
             ArrayList<String> l = new ArrayList<>();
+            if(list.contains(ans)) {
+                return new ArrayList<>();
+            }
+            l.add(ans);
             return l;
         }
-        if(index >= digit.length()){
-            ArrayList<String> l = new ArrayList<>();
-            l.add(p);
-            return l;
-        }
-        int num = digit.charAt(index) - '0';
+        int num = digits.charAt(index) - '0';
         String str = getString(num);
         for(int i=0; i<str.length(); i++){
-            list.addAll(keyPad(digit, p+str.charAt(i), list, index+1));
+            list.addAll(keypad(digits, ans+str.charAt(i), index+1, list));
         }
-        Set<String> set = new HashSet<>(list);
-        return new ArrayList<>(set);
+        return list;
     }
     public static void main(String []args){
         Scanner sc = new Scanner(System.in);
         int tc = sc.nextInt();
         while(tc-- > 0){
-            String digit = sc.next();
-            System.out.println(keyPad(digit, "", new ArrayList<>(), 0));
+            String digits = sc.next();
+            System.out.println(keypad(digits, "", 0, new ArrayList<>()));
         }
     }
 }
